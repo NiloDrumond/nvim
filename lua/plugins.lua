@@ -67,6 +67,7 @@ return require('packer').startup({
     use { 'hrsh7th/cmp-path', after = 'cmp-buffer' }
     use { 'hrsh7th/cmp-cmdline', after = 'cmp-path' }
     use { 'hrsh7th/cmp-calc', after = 'cmp-cmdline' }
+    use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
 
     use { 'David-Kunz/cmp-npm', after = 'nvim-cmp', requires = 'nvim-lua/plenary.nvim',
       config = "require('plugins.cmp-npm')" }

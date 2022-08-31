@@ -26,7 +26,8 @@ end
 -- ╰──────────────────────────────────────────────────────────╯
 local source_mapping = {
   npm        = EcoVim.icons.terminal .. 'NPM',
-  nvim_lsp   = EcoVim.icons.paragraph .. 'LSP',
+  nvim_lsp   = EcoVim.icons.code .. 'LSP',
+  nvim_lsp_signature_help   = EcoVim.icons.func .. 'SIG',
   buffer     = EcoVim.icons.buffer .. 'BUF',
   nvim_lua   = EcoVim.icons.bomb,
   luasnip    = EcoVim.icons.snippet .. 'SNP',
@@ -133,6 +134,7 @@ cmp.setup {
 
   -- You should specify your *installed* sources.
   sources = {
+    { name = 'nvim_lsp_signature_help', priority = 10 },
     { name = 'nvim_lsp', priority = 9 },
     { name = 'npm', priority = 9 },
     { name = 'luasnip', priority = 7, max_item_count = 8 },
