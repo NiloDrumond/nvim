@@ -71,6 +71,7 @@ local icons = {
   interface           = "  ",
   key                 = "  ",
   keyword             = "  ",
+  lambda              = " λ ",
   light               = "  ",
   lightbulb           = "  ",
   lightbulbOutline    = "  ",
