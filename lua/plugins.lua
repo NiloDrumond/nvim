@@ -28,6 +28,8 @@ return require('packer').startup({
     use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } }
     use { 'RRethy/nvim-treesitter-textsubjects', after = { 'nvim-treesitter' } }
     use { 'm-demare/hlargs.nvim', config = function() require('hlargs').setup({ color = "#F7768E" }) end }
+    use { 'nvim-treesitter/nvim-treesitter-context', after = { 'nvim-treesitter'} }
+
 
     -- Navigating (Telescope/Tree/Refactor)
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
