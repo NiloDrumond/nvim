@@ -87,6 +87,9 @@ keymap("n", "<Space>.", ":cn<CR>", silent)
 -- Toggle quicklist
 keymap("n", "<leader>q", "<cmd>lua require('utils').toggle_quicklist()<CR>", silent)
 
+-- Tagbar
+keymap("n", "<F8>", "<cmd>:TagbarToggle<CR>", silent)
+
 -- Easyalign
 keymap("n", "ga", "<Plug>(EasyAlign)", silent)
 keymap("x", "ga", "<Plug>(EasyAlign)", silent)

@@ -55,6 +55,7 @@ return require('packer').startup({
       branch = 'v2', -- optional but strongly recommended
       config = "require('plugins.hop')"
     }
+    use { "preservim/tagbar", config = "require('plugins.tagbar')" }
 
     -- LSP Base
     use { 'williamboman/mason.nvim' }
