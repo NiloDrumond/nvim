@@ -3,4 +3,5 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   command = ":lua vim.lsp.buf.formatting_sync()"
 })
 
-vim.keymap.set('n', "<space><space>", "<cmd>:lua vim.lsp.buf.formatting_sync()<CR>", { silent = true })
+vim.keymap.set('n', "<space><space>", "<cmd>:lua vim.lsp.buf.formatting_sync()<CR><cmd>RustReloadWorkspace<CR>",
+  { silent = true })
