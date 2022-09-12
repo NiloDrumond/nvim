@@ -115,12 +115,10 @@ local normal_mode_mappings = {
     },
   },
 
-
-
   a = {
     name = "Actions",
-    n = { '<cmd>enew<CR>', "new buffer" },
     c = { 'comment box' },
+    n = { '<cmd>enew<CR>', "new buffer" },
     u = { '<cmd>set nonumber!<CR>', 'line numbers' },
     r = { '<cmd>set norelativenumber!<CR>', 'relative number' },
     t = { '<cmd>ToggleTerm direction=float<CR>', 'terminal float' },
@@ -170,8 +168,15 @@ local normal_mode_mappings = {
     A = { '<cmd>!git add .<CR>', 'add all' },
     b = { '<cmd>lua require("internal.blame").open()<CR>', 'blame' },
     B = { '<cmd>Telescope git_branches<CR>', 'branches' },
-    d = { '<cmd>lua require("plugins.git.diffview").toggle()<CR>', 'diff file' },
-    f = { '<cmd>Telescope git_files<CR>', 'git files' },
+    c = {
+      name = 'Conflict',
+      b = { '<cmd>GitConflictChooseBoth<CR>', 'choose both' },
+      n = { '<cmd>GitConflictNextConflict<CR>', 'move to next conflict' },
+      o = { '<cmd>GitConflictChooseOurs<CR>', 'choose ours' },
+      p = { '<cmd>GitConflictPrevConflict<CR>', 'move to prev conflict' },
+      t = { '<cmd>GitConflictChooseTheirs<CR>', 'choose theirs' },
+    },
+    d = { '<cmd>lua require("plugins.git.diffview").toggle_file_history()<CR>', 'diff file' },
     g = { '<cmd>LazyGit<CR>', 'lazygit' },
     h = {
       name = "Hunk",
@@ -184,7 +189,6 @@ local normal_mode_mappings = {
       t = "toggle deleted",
       u = "undo stage",
     },
-
     l = {
       name = "Log",
       A = { "<cmd>lua require('plugins.telescope').my_git_commits()<CR>", "commits (Telescope)" },
@@ -192,8 +196,8 @@ local normal_mode_mappings = {
       C = { "<cmd>lua require('plugins.telescope').my_git_bcommits()<CR>", "buffer commits (Telescope)" },
       c = { "<cmd>LazyGitFilterCurrentFile<CR>", "buffer commits" },
     },
-    m = { 'blame line' },
-    s = { '<cmd>Telescope git_status<CR>', 'status' },
+    m = { "blame line" },
+    s = { '<cmd>lua require("plugins.git.diffview").toggle_status()<CR>', 'status' },
     w = {
       name = "Worktree",
       w = "worktrees",
@@ -299,7 +303,7 @@ local function attach_typescript(bufnr)
     [" "] = { '<cmd>EslintFixAll<CR>', 'format' },
     c = {
       name = "LSP",
-      f = { '<cmd>EslintFixAll<CR>', 'format' },
+      -- f = { '<cmd>EslintFixAll<CR>', 'format' },
       F = { '<cmd>TypescriptFixAll<CR>', 'fix all' },
       i = { '<cmd>TypescriptAddMissingImports<CR>', 'import all' },
       o = { '<cmd>TypescriptOrganizeImports<CR>', 'organize imports' },

@@ -90,6 +90,7 @@ return require('packer').startup({
       requires = "neovim/nvim-lspconfig"
     }
     use { 'simrat39/rust-tools.nvim', config = "require('plugins.rust-tools')", requires = { 'neovim/nvim-lspconfig' } }
+    use { 'lvimuser/lsp-inlayhints.nvim', config = function() require('lsp-inlayhints').setup() end }
 
     -- General
     use { 'AndrewRadev/switch.vim' }
@@ -116,7 +117,7 @@ return require('packer').startup({
       config = "require('plugins.lualine')",
       event = "BufWinEnter"
     }
-    use { 'romgrk/barbar.nvim', branch = 'feat/wipeout-cmds', requires = { 'kyazdani42/nvim-web-devicons' },
+    use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons' },
       config = "require('plugins.barbar')" }
     use { 'antoinemadec/FixCursorHold.nvim' } -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
     use { 'rcarriga/nvim-notify', config = "require('plugins.notify')" }
@@ -129,7 +130,6 @@ return require('packer').startup({
     use { 'kylechui/nvim-surround', config = function() require("nvim-surround").setup({}) end }
     use { 'sunjon/shade.nvim', config = function() require("shade").setup(); require("shade").toggle(); end }
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async', config = "require('plugins.nvim-ufo')" }
-    use { 'danilamihailov/beacon.nvim' }
 
     -- Snippets & Language & Syntax
     use { 'windwp/nvim-autopairs', after = { 'nvim-treesitter', 'nvim-cmp' }, config = "require('plugins.autopairs')" }
@@ -144,8 +144,8 @@ return require('packer').startup({
       config = "require('plugins.git.signs')",
       event = "BufRead"
     }
-    -- use { 'sindrets/diffview.nvim', config = "require('plugins.git.diffview')" }
-    use { 'akinsho/git-conflict.nvim', config = "require('plugins.git.conflict')" }
+    use { 'sindrets/diffview.nvim', config = "require('plugins.git.diffview')" }
+    use { 'akinsho/git-conflict.nvim', tag = "*", config = "require('plugins.git.conflict')" }
     use { 'ThePrimeagen/git-worktree.nvim', config = "require('plugins.git.worktree')" }
     use { 'kdheepak/lazygit.nvim' }
 

@@ -19,7 +19,7 @@ mason_lsp.setup {
   -- A list of servers to automatically install if they're not already installed
   ensure_installed = { "bash-language-server", "css-lsp", "eslint-lsp", "graphql-language-service-cli", "html-lsp",
     "json-lsp", "lua-language-server", "tailwindcss-language-server", "typescript-language-server",
-    "vetur-vls", "chrome-debug-adapter", "node-debug2-adapter", "prisma-language-server" },
+    "chrome-debug-adapter", "node-debug2-adapter", "prisma-language-server" },
 
   -- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
   -- This setting has no relation with the `ensure_installed` setting.
@@ -67,6 +67,7 @@ if typescript_ok then
       capabilities = require('lsp.servers.tsserver').capabilities,
       handlers = require('lsp.servers.tsserver').handlers,
       on_attach = require('lsp.servers.tsserver').on_attach,
+      settings = require('lsp.servers.tsserver').settings,
     }
   })
 end
@@ -84,6 +85,7 @@ lspconfig.cssls.setup {
   capabilities = capabilities,
   handlers = handlers,
   on_attach = require('lsp.servers.cssls').on_attach,
+  settings = require('lsp.servers.cssls').settings,
 }
 
 lspconfig.eslint.setup {

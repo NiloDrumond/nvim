@@ -25,16 +25,16 @@ end
 -- │ Setup                                                    │
 -- ╰──────────────────────────────────────────────────────────╯
 local source_mapping = {
-  npm        = EcoVim.icons.terminal .. 'NPM',
-  nvim_lsp   = EcoVim.icons.code .. 'LSP',
-  nvim_lsp_signature_help   = EcoVim.icons.func .. 'SIG',
-  buffer     = EcoVim.icons.buffer .. 'BUF',
-  nvim_lua   = EcoVim.icons.bomb,
-  luasnip    = EcoVim.icons.snippet .. 'SNP',
-  calc       = EcoVim.icons.calculator,
-  path       = EcoVim.icons.folderOpen2,
-  treesitter = EcoVim.icons.tree,
-  zsh        = EcoVim.icons.terminal .. 'ZSH',
+  npm                     = EcoVim.icons.terminal .. 'NPM',
+  nvim_lsp                = EcoVim.icons.code .. 'LSP',
+  nvim_lsp_signature_help = EcoVim.icons.func .. 'SIG',
+  buffer                  = EcoVim.icons.buffer .. 'BUF',
+  nvim_lua                = EcoVim.icons.bomb,
+  luasnip                 = EcoVim.icons.snippet .. 'SNP',
+  calc                    = EcoVim.icons.calculator,
+  path                    = EcoVim.icons.folderOpen2,
+  treesitter              = EcoVim.icons.tree,
+  zsh                     = EcoVim.icons.terminal .. 'ZSH',
 }
 
 local buffer_option = {

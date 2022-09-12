@@ -36,7 +36,7 @@ require('telescope').setup {
       prompt_position = "top",
     },
     file_sorter       = require('telescope.sorters').get_fzy_sorter,
-    prompt_prefix     = ' 🔍 ',
+    prompt_prefix     = '  ',
     color_devicons    = true,
 
     git_icons = git_icons,
