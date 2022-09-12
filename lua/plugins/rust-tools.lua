@@ -1,9 +1,6 @@
-local rt = require("rust-tools")
-
 local opts = {
   tools = {
     autoSetHints = true,
-    hover_with_actions = true,
     runnables = {
       use_telescope = true
     },
@@ -32,8 +29,7 @@ local opts = {
     -- on_attach is a callback called when the language server attachs to the buffer
     -- on_attach = on_attach,
     on_attach = function(_, bufnr)
-      vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
-      -- vim.keymap.set("n", "<leader>ca", rt.code_action.code_action, { buffer = bufnr })
+      vim.keymap.set("n", "K", ":RustHoverActions", { buffer = bufnr })
     end,
     capabilities = capabilities,
     settings = {
