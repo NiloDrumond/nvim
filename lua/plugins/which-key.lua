@@ -119,7 +119,7 @@ local normal_mode_mappings = {
 
   a = {
     name = "Actions",
-    n = { '<cmd>enew<CR>',"new buffer" },
+    n = { '<cmd>enew<CR>', "new buffer" },
     c = { 'comment box' },
     u = { '<cmd>set nonumber!<CR>', 'line numbers' },
     r = { '<cmd>set norelativenumber!<CR>', 'relative number' },
