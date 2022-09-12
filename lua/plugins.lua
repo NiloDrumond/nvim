@@ -9,7 +9,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup({
- function(use)
+  function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
@@ -104,7 +104,7 @@ return require('packer').startup({
     use { 'junegunn/vim-easy-align' }
     use { 'JoosepAlviste/nvim-ts-context-commentstring', after = 'nvim-treesitter' }
     use { 'nacro90/numb.nvim', config = "require('plugins.numb')" }
-    use { 'B4mbus/todo-comments.nvim', config = "require('plugins.todo-comments')" }
+    use { 'folke/todo-comments.nvim', config = "require('plugins.todo-comments')" }
     use { 'folke/zen-mode.nvim', config = "require('plugins.zen')", disable = not EcoVim.plugins.zen.enabled }
     use { 'folke/twilight.nvim', config = function() require("twilight").setup {} end,
       disable = not EcoVim.plugins.zen.enabled }
