@@ -28,7 +28,7 @@ require('telescope').setup {
       '--column',
       '--smart-case'
     },
-    path_display      = { "smart" },
+    path_display      = { "truncate" },
     layout_config     = {
       horizontal = {
         preview_cutoff = 120,
