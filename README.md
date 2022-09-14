@@ -1,3 +1,20 @@
+# WIP
+
+A fork of [Ecovim](https://github.com/ecosse3/nvim)
+
+## Added features compared to Ecovim
+- Rust support with rust-tools
+- Tagbar
+- Monokai theme (WIP)
+- Live grep in folder picker for Telescope
+- New keymaps
+- Lots of minor changes to configs
+
+
+Ecovim README down below:
+
+---
+
 # Ecovim: Frontend Neovim Config
 
 [![Last commit](https://img.shields.io/github/last-commit/ecosse3/nvim?style=for-the-badge)](https://github.com/ecosse3/nvim/commits/master)
