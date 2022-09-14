@@ -131,6 +131,7 @@ return require('packer').startup({
     use { 'kylechui/nvim-surround', config = function() require("nvim-surround").setup({}) end }
     use { 'sunjon/shade.nvim', config = function() require("shade").setup(); require("shade").toggle(); end }
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async', config = "require('plugins.nvim-ufo')" }
+    use { 'danilamihailov/beacon.nvim' }
 
     -- Snippets & Language & Syntax
     use { 'windwp/nvim-autopairs', after = { 'nvim-treesitter', 'nvim-cmp' }, config = "require('plugins.autopairs')" }
