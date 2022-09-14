@@ -1,3 +1,9 @@
+# WIP
+
+## A fork of [Ecovim](https://github.com/ecosse3/nvim)
+
+Ecovim README down below:
+
 # Ecovim: Frontend Neovim Config
 
 [![Last commit](https://img.shields.io/github/last-commit/ecosse3/nvim?style=for-the-badge)](https://github.com/ecosse3/nvim/commits/master)
