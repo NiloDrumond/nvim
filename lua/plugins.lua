@@ -124,7 +124,8 @@ return require('packer').startup({
     use { 'vuki656/package-info.nvim', event = "BufEnter package.json", config = "require('plugins.package-info')" }
     use { 'iamcco/markdown-preview.nvim', run = "cd app && npm install",
       setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" } }
-    use { 'declancm/cinnamon.nvim', config = "require('plugins.cinnamon')" }
+    -- use { 'declancm/cinnamon.nvim', config = "require('plugins.cinnamon')" }
+    use { 'karb94/neoscroll.nvim', config = "require('plugins.neoscroll')" }
     use { 'airblade/vim-rooter', setup = function() vim.g.rooter_patterns = EcoVim.plugins.rooter.patterns end }
     use { 'Shatur/neovim-session-manager', config = "require('plugins.session-manager')" }
     use { 'kylechui/nvim-surround', config = function() require("nvim-surround").setup({}) end }
