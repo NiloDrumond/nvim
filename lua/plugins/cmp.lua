@@ -134,9 +134,9 @@ cmp.setup {
 
   -- You should specify your *installed* sources.
   sources = {
-    { name = 'nvim_lsp_signature_help', priority = 10 },
     { name = 'nvim_lsp', priority = 9 },
     { name = 'npm', priority = 9 },
+    { name = 'nvim_lsp_signature_help', priority = 8 },
     { name = 'luasnip', priority = 7, max_item_count = 8 },
     { name = 'buffer', priority = 7, keyword_length = 5, option = buffer_option, max_item_count = 8 },
     { name = 'nvim_lua', priority = 5 },
