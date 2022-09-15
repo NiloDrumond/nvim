@@ -131,7 +131,7 @@ keymap("n", "K", function()
 end)
 
 -- Copy whole file
-keymap("n", "ya", "ggVGy", silent)
+keymap("n", "yA", "ggVGy", silent)
 
 -- Parse json on selection
 keymap("v", "<leader>jq", ":!jq<CR>", silent)
