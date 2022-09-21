@@ -141,7 +141,7 @@ local normal_mode_mappings = {
     a = { 'code action' },
     d = { '<cmd>TroubleToggle<CR>', 'local diagnostics' },
     D = { '<cmd>Telescope diagnostics wrap_results=true<CR>', 'workspace diagnostics' },
-    -- f = { 'format' },
+    f = { 'format' },
     l = { 'line diagnostics' },
     r = { 'rename' },
     t = { '<cmd>LspToggleAutoFormat<CR>', 'toggle format on save' },
@@ -177,6 +177,7 @@ local normal_mode_mappings = {
       t = { '<cmd>GitConflictChooseTheirs<CR>', 'choose theirs' },
     },
     d = { '<cmd>lua require("plugins.git.diffview").toggle_file_history()<CR>', 'diff file' },
+    f = { '<cmd>Telescope git_files<CR>', 'git files' },
     g = { '<cmd>LazyGit<CR>', 'lazygit' },
     h = {
       name = "Hunk",
