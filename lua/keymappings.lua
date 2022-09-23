@@ -26,6 +26,9 @@ keymap("v", "<A-`>", "U", silent)
 keymap("n", "<C-s>", ":w<CR>", silent)
 keymap("i", "<C-s>", "<ESC> :w<CR>", silent)
 
+-- Paste by CTRL-P
+keymap("i", "<C-p>", "<C-r>+", silent)
+
 -- Telescope
 keymap("n", "<C-p>", "<CMD>Telescope fd<CR>")
 keymap("n", "<S-p>", "<CMD>lua require('plugins.telescope.pickers.multi-rg')()<CR>")
