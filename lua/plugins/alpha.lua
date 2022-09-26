@@ -22,11 +22,58 @@ local header = {
   "╚══════╝ ╚═════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
 }
 
+local header = {
+  "██      ██    ██  █████  ██    ██ ██ ███    ███ ",
+  "██      ██    ██ ██   ██ ██    ██ ██ ████  ████ ",
+  "██      ██    ██ ███████ ██    ██ ██ ██ ████ ██ ",
+  "██      ██    ██ ██   ██  ██  ██  ██ ██  ██  ██ ",
+  "███████ ████████ ██   ██   ████   ██ ██      ██ ",
+}
+--
+-- local header = {
+--   "   ██      ██  ██    ████  ██  ██  ██  ████  ████ ",
+--   "   ██      ██  ██  ██  ██  ██  ██  ██  ██  ██  ██ ",
+--   "   ██      ██  ██  ██████  ██  ██  ██  ██  ██  ██ ",
+--   "   ██████  ██████  ██  ██    ██    ██  ██      ██ ",
+--   "   ",
+--   "   ",
+--   "              W E L C O M E   T O   L U A           ",
+-- }
+
+
+local header = {
+  "",
+  "",
+  "█   █ █ ▄▀█ █ █ █ █▀▄▀█ ",
+  "█▄▄ █▄█ █▀█ ▀▄▀ █ █ ▀ █ ",
+  "",
+  "",
+  " L U A  +  N E O V I M ",
+  "",
+  "",
+}
+local header = {
+  "",
+  "",
+  "█   █ █ ▄▀█ █ █ █ █▀▄▀█ ",
+  "█▄▄ █▄█ █▀█ ▀▄▀ █ █ ▀ █ ",
+  "",
+  "",
+  " P I N K   N I G H T",
+}
+
+-- local header = {
+--   "█ █ █ █▀█ █   ██▀ ▀█▀ █ █ █ █▀▄▀█ ",
+--   "▀▄▀ █ █▄█ █▄▄ █▄▄  █  ▀▄▀ █ █ ▀ █ ",
+--   "",
+-- }
+
+
 dashboard.section.header.type = "text";
 dashboard.section.header.val = header;
 dashboard.section.header.opts = {
   position = "center",
-  hl = "EcovimHeader",
+  hl = "LuavimHeader",
 }
 
 -- ╭──────────────────────────────────────────────────────────╮
@@ -42,28 +89,28 @@ local datetime = os.date " %H:%M"
 
 local hi_top_section = {
   type = "text",
-  val = "┌────────────   Today is " .. date .. " ────────────┐",
+  val = "┌──────   Today is " .. date .. " ──────┐",
   opts = {
     position = "center",
-    hl = "EcovimHeaderInfo"
+    hl = "LuavimHeaderInfo"
   }
 }
 
 local hi_middle_section = {
   type = "text",
-  val = "│                                                │",
+  val = "│                                    │",
   opts = {
     position = "center",
-    hl = "EcovimHeaderInfo"
+    hl = "LuavimHeaderInfo"
   }
 }
 
 local hi_bottom_section = {
   type = "text",
-  val = "└───══───══───══───  " .. datetime .. "  ───══───══───══────┘",
+  val = "└────────────  " .. datetime .. "  ─────────────┘",
   opts = {
     position = "center",
-    hl = "EcovimHeaderInfo"
+    hl = "LuavimHeaderInfo"
   }
 }
 
@@ -85,9 +132,9 @@ local function button(sc, txt, keybind, keybind_opts)
     position = "center",
     shortcut = sc,
     cursor = 5,
-    width = 50,
+    width = 35,
     align_shortcut = "right",
-    hl_shortcut = "EcovimPrimary",
+    hl_shortcut = "LuavimPrimary",
   }
   if keybind then
     keybind_opts = if_nil(keybind_opts, { noremap = true, silent = true, nowait = true })
@@ -112,7 +159,7 @@ dashboard.section.buttons.val = {
   button("<C-P>", icons.fileNoBg .. " " .. "Find File", "<cmd>Telescope find_files<CR>", {}),
   button("<S-P>", icons.t .. " " .. "Find Word", "<cmd>lua require('plugins.telescope.pickers.multi-rg')()<CR>", {}),
   button("SPC s h", icons.fileRecent .. " " .. "Recents", "<cmd>Telescope oldfiles hidden=true<CR>", {}),
-  button("SPC / s d", icons.timer .. " " .. "Load Current Dir Session",
+  button("SPC / s d", icons.timer .. " " .. "Load Current Dir",
     "<cmd>SessionManager load_current_dir_session<CR>", {}),
   button("SPC / u", icons.container .. " " .. "Update Plugins", "<cmd>PackerSync<CR>", {}),
   button("SPC / i", icons.container .. " " .. "Install Plugins", "<cmd>PackerInstall<CR>", {}),
@@ -146,12 +193,10 @@ local function footer()
   return string.format(" v%d.%d.%d   %d   %s ", v.major, v.minor, v.patch, plugins, ecovim_version[1])
 end
 
-dashboard.section.footer.val = {
-  footer()
-}
+dashboard.section.footer.val = "~ Welcome Home ~"
 dashboard.section.footer.opts = {
   position = "center",
-  hl = "EcovimFooter",
+  hl = "LuavimFooter",
 }
 
 local section = {
@@ -177,7 +222,7 @@ local opts = {
     section.hi_bottom_section,
     { type = "padding", val = 2 },
     section.buttons,
-    { type = "padding", val = 5 },
+    { type = "padding", val = 3 },
     section.footer,
   },
   opts = {
