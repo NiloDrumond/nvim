@@ -226,6 +226,7 @@ local normal_mode_mappings = {
 
   s = {
     name = "Search",
+    a = { '<cmd>lua require"telescope.builtin".find_files({ hidden = true })<CR>', 'all files' },
     c = { '<cmd>Telescope colorscheme<CR>', 'color schemes' },
     d = { '<cmd>lua require("plugins.telescope").edit_neovim()<CR>', 'dotfiles' },
     h = { '<cmd>Telescope oldfiles hidden=true<CR>', 'file history' },
