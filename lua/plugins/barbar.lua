@@ -1,5 +1,5 @@
 -- Set barbar's options
-vim.g.bufferline = {
+require("bufferline").setup {
   -- Enable/disable animations
   animation = true,
 
@@ -18,7 +18,7 @@ vim.g.bufferline = {
   clickable = true,
 
   -- Excludes buffers from the tabline
-  exclude_ft = {'qf'},
+  exclude_ft = { 'qf' },
   -- exclude_name = ['package.json'],
 
   -- Enable/disable icons
