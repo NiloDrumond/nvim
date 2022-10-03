@@ -118,7 +118,7 @@ return require('packer').startup({
       event = "BufWinEnter"
     }
     use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons' },
-      config = "require('plugins.barbar')" }
+      config = "require('plugins.barbar')", branch = 'master' }
     use { 'antoinemadec/FixCursorHold.nvim' } -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
     use { 'rcarriga/nvim-notify', config = "require('plugins.notify')" }
     use { 'vuki656/package-info.nvim', event = "BufEnter package.json", config = "require('plugins.package-info')" }
