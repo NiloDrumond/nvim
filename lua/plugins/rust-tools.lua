@@ -29,7 +29,7 @@ local opts = {
     -- on_attach is a callback called when the language server attachs to the buffer
     -- on_attach = on_attach,
     on_attach = function(_, bufnr)
-      vim.keymap.set("n", "K", ":RustHoverActions", { buffer = bufnr })
+      vim.keymap.set("n", "K", ":RustHoverActions<CR>", { buffer = bufnr })
     end,
     capabilities = capabilities,
     settings = {
