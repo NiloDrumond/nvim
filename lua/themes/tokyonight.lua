@@ -68,6 +68,9 @@ require('tokyonight').setup({
       bg = none,
       fg = secondary
     }
+    hl.LspInlayHint = {
+      bg = none
+    }
 
     --
     -- hl.TelescopeTitle = {
