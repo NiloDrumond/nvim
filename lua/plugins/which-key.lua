@@ -300,6 +300,27 @@ local function attach_markdown(bufnr)
   })
 end
 
+local function attach_javascript(bufnr)
+  wk.register({
+    [" "] = { '<cmd>EslintFixAll<CR>', 'format' },
+    c = {
+      name = "LSP",
+      -- f = { '<cmd>EslintFixAll<CR>', 'format' },
+      -- F = { '<cmd>TypescriptFixAll<CR>', 'fix all' },
+      -- i = { '<cmd>TypescriptAddMissingImports<CR>', 'import all' },
+      -- o = { '<cmd>TypescriptOrganizeImports<CR>', 'organize imports' },
+      -- u = { '<cmd>TypescriptRemoveUnused<CR>', 'remove unused' },
+    }
+  }, {
+    buffer = bufnr,
+    mode = "n", -- NORMAL mode
+    prefix = "<leader>",
+    silent = true, -- use `silent` when creating keymaps
+    noremap = true, -- use `noremap` when creating keymaps
+    nowait = false, -- use `nowait` when creating keymaps
+  })
+end
+
 local function attach_typescript(bufnr)
   wk.register({
     [" "] = { '<cmd>EslintFixAll<CR>', 'format' },
@@ -400,4 +421,5 @@ return {
   attach_zen = attach_zen,
   attach_jest = attach_jest,
   attach_spectre = attach_spectre,
+  attach_javascript = attach_javascript
 }

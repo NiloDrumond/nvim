@@ -19,6 +19,8 @@ vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.md",
   callback = function() pwk.attach_markdown(0) end })
 vim.api.nvim_create_autocmd("BufEnter", { pattern = { "*.ts", "*.tsx" },
   callback = function() pwk.attach_typescript(0) end })
+vim.api.nvim_create_autocmd("BufEnter", { pattern = { "*.js", "*.jsx" },
+  callback = function() pwk.attach_javascript(0) end })
 vim.api.nvim_create_autocmd("BufEnter", { pattern = { "package.json" },
   callback = function() pwk.attach_npm(0) end })
 vim.api.nvim_create_autocmd("FileType",
