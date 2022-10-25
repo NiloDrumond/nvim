@@ -1,3 +1,1 @@
-
-vim.keymap.set('n', "<space><space>", "<cmd>:lua vim.lsp.buf.formatting_sync()<CR>", { silent = true })
-
+vim.keymap.set('n', "<space><space>", "<cmd>:lua vim.lsp.buf.format()<CR>", { silent = true })

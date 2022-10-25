@@ -3,7 +3,7 @@ local M = {}
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local cmp_nvim_lsp_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if cmp_nvim_lsp_ok then
-  capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
   capabilities.textDocument.completion.completionItem.snippetSupport = true
   capabilities.textDocument.completion.completionItem.preselectSupport = true
   capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
@@ -92,13 +92,13 @@ local handlers = {
   ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
     { virtual_text = EcoVim.lsp.virtual_text }),
   ['textDocument/definition'] = function(err, result, method, ...)
-      if vim.tbl_islist(result) and #result > 1 then
-        local filtered_result = filter(result, filterReactDTS)
-        return vim.lsp.handlers['textDocument/definition'](err, filtered_result, method, ...)
-      end
-
-      vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
+    if vim.tbl_islist(result) and #result > 1 then
+      local filtered_result = filter(result, filterReactDTS)
+      return vim.lsp.handlers['textDocument/definition'](err, filtered_result, method, ...)
     end
+
+    vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
+  end
 }
 
 local settings = {
