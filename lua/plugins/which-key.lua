@@ -175,6 +175,7 @@ local normal_mode_mappings = {
       o = { '<cmd>GitConflictChooseOurs<CR>', 'choose ours' },
       p = { '<cmd>GitConflictPrevConflict<CR>', 'move to prev conflict' },
       t = { '<cmd>GitConflictChooseTheirs<CR>', 'choose theirs' },
+      r = { '<cmd>GitConflictRefresh<CR>', 'refresh' }
     },
     d = { '<cmd>lua require("plugins.git.diffview").toggle_file_history()<CR>', 'diff file' },
     f = { '<cmd>Telescope git_files<CR>', 'git files' },
