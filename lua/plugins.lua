@@ -21,7 +21,6 @@ return require('packer').startup({
 
     -- Themes
     use { 'folke/tokyonight.nvim', config = "require('themes.tokyonight')" }
-    -- use { 'tanvirtin/monokai.nvim', config = "require('themes.monokai')" }
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', config = "require('plugins.treesitter')" }
